@@ -21,7 +21,7 @@ spec:
         app: prometheus-test-demo
     spec:
       containers:
-      - image: harbor.edu.cn/library/prometheus-test-demo:{VERSION}
+      - image: harbor.edu.cn/nju09/prometheus-test-demo:{VERSION}
         name: prometheus-test-demo
 ---
 apiVersion: v1
