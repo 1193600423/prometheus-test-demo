@@ -16,4 +16,4 @@ spec:
       app: prometheus-test-demo
   namespaceSelector:
     matchNames:
-    - default
+    - nju09
