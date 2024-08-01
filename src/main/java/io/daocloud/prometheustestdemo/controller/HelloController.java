@@ -1,5 +1,6 @@
 package io.daocloud.prometheustestdemo.controller;
 
+import io.daocloud.prometheustestdemo.domain.Hello;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
     @GetMapping("/hello")
 //    @RequestLimit(count=100)
-    public String hello() {
-        return "hello";
+    public Hello hello() {
+        return new Hello("hello");
     }
 }
