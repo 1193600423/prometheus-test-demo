@@ -38,5 +38,5 @@ spec:
   ports:
     - name: tcp
       protocol: TCP
-      port: 8080
+      port: 8998
       targetPort: 8080
