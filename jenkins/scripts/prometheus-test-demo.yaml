@@ -14,15 +14,15 @@ spec:
     metadata:
       annotations:
         prometheus.io/path: /actuator/prometheus
-        prometheus.io/port: "8080"
+        prometheus.io/port: "8998"
         prometheus.io/scheme: http
         prometheus.io/scrape: "true"
       labels:
         app: prometheus-test-demo
     spec:
       containers:
-      - image: harbor.edu.cn/nju09/prometheus-test-demo:{VERSION}
-        name: prometheus-test-demo
+        - image: harbor.edu.cn/nju09/prometheus-test-demo:{VERSION}
+          name: prometheus-test-demo
 ---
 apiVersion: v1
 kind: Service
@@ -36,7 +36,7 @@ spec:
   selector:
     app: prometheus-test-demo
   ports:
-  - name: tcp
-    protocol: TCP
-    port: 8080
-    targetPort: 8080
+    - name: tcp
+      protocol: TCP
+      port: 8998
+      targetPort: 8998
