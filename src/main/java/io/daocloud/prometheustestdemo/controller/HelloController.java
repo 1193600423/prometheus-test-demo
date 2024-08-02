@@ -17,21 +17,22 @@ import java.time.Duration;
 public class HelloController {
 
     //令牌桶，实现接口限流，每秒 100 次
-    private final Bucket bucket;
+//    private final Bucket bucket;
 
-    public HelloController(){
-        Bandwidth limit = Bandwidth.classic(100, Refill.greedy(100, Duration.ofSeconds(1)));
-        this.bucket = Bucket.builder()
-                .addLimit(limit)
-                .build();
-    }
+//    public HelloController(){
+//        Bandwidth limit = Bandwidth.classic(100, Refill.greedy(100, Duration.ofSeconds(1)));
+//        this.bucket = Bucket.builder()
+//                .addLimit(limit)
+//                .build();
+//    }
 
     @GetMapping("/hello")
 //    @RequestLimit(count=100)
     public ResponseEntity<Hello> hello() {
-        if (bucket.tryConsume(1)) {
-            return ResponseEntity.ok(new Hello("hello"));
-        }
-        return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).build();
+//        if (bucket.tryConsume(1)) {
+//            return ResponseEntity.ok(new Hello("hello"));
+//        }
+//        return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).build();
+        return ResponseEntity.ok(new Hello("hello"));
     }
 }
