@@ -14,7 +14,7 @@ spec:
     metadata:
       annotations:
         prometheus.io/path: /actuator/prometheus
-        prometheus.io/port: "8998"
+        prometheus.io/port: "8080"
         prometheus.io/scheme: http
         prometheus.io/scrape: "true"
       labels:
@@ -38,5 +38,5 @@ spec:
   ports:
     - name: tcp
       protocol: TCP
-      port: 8998
-      targetPort: 8998
+      port: 8080
+      targetPort: 8080
