@@ -28,10 +28,10 @@ public class HelloController {
 
     @GetMapping("/hello")
     public ResponseEntity<Hello> hello() {
-        if (bucket.tryConsume(1)) {
-            return ResponseEntity.ok(new Hello("hello"));
-        }
-        return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).build();
-//        return ResponseEntity.ok(new Hello("hello"));
+//        if (bucket.tryConsume(1)) {
+//            return ResponseEntity.ok(new Hello("hello"));
+//        }
+//        return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).build();
+        return ResponseEntity.ok(new Hello("hello"));
     }
 }
